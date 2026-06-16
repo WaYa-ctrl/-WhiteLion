@@ -43,9 +43,9 @@
   a { text-decoration: none; color: inherit; }
 
   /* ── CUSTOM CURSOR ── */
+ /* ── CUSTOM CURSOR ── */
   @media (pointer: fine) {
-    body { cursor: none; }
-    a, button, select, input, .service-group-head, .gallery-item { cursor: none; }
+    /* Мы убрали cursor: none, теперь стандартная мышка видна всегда */
     
     .cursor-dot, .cursor-ring {
       position: fixed;
@@ -56,9 +56,7 @@
       z-index: 9999;
     }
     .cursor-dot {
-      width: 6px;
-      height: 6px;
-      background-color: var(--gold);
+      display: none; /* Прячем центральную точку, чтобы она не мешала стандартной стрелочке */
     }
     .cursor-ring {
       width: 36px;
