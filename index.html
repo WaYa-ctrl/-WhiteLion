@@ -147,7 +147,6 @@
     width: 40px;
     height: 40px;
     filter: invert(1) brightness(1.2) sepia(1) hue-rotate(5deg) saturate(3);
-    /* turns lion graphic golden */
   }
   .logo-text {
     font-family: var(--font-display);
@@ -254,7 +253,6 @@
     position: absolute;
     inset: 0;
     background: url('images/hero.jpg') center/cover no-repeat;
-    /* Fallback gradient if no image */
     background-color: #1a1a1a;
   }
   .hero-bg::after {
@@ -268,7 +266,6 @@
       rgba(0,0,0,0.7) 100%
     );
   }
-  /* Decorative gold vertical line */
   .hero-bg::before {
     content: '';
     position: absolute;
@@ -703,19 +700,6 @@
   .master-card:hover .master-photo img {
     transform: scale(1.05);
   }
-  /* Placeholder when no image */
-  .master-photo-placeholder {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, var(--bg-card) 0%, #2a2a2a 100%);
-  }
-  .master-photo-placeholder i {
-    font-size: 5rem;
-    color: var(--border);
-  }
   .master-badge {
     position: absolute;
     top: 14px; right: 14px;
@@ -781,20 +765,6 @@
   .gallery-item:hover img {
     transform: scale(1.08);
   }
-  .gallery-item-placeholder {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, #1e1e1e 0%, #2a2a2a 100%);
-    font-family: var(--font-display);
-    font-size: 0.65rem;
-    font-weight: 600;
-    letter-spacing: 0.2em;
-    color: var(--border);
-    text-transform: uppercase;
-  }
   .gallery-overlay {
     position: absolute;
     inset: 0;
@@ -845,7 +815,6 @@
     color: var(--gold);
     line-height: 1;
   }
-  .reviews-rating-info { }
   .stars-row { color: var(--gold); font-size: 1rem; letter-spacing: 2px; }
   .reviews-count { font-size: 0.8rem; color: var(--gray); margin-top: 4px; }
   .reviews-grid {
@@ -1128,7 +1097,7 @@
   .form-group select:focus {
     border-color: var(--gold);
   }
-  .form-group select option { background: var(--bg-mid); }
+  .form-group select option { background: var(--bg-mid); color: #fff; }
   .modal .btn { width: 100%; text-align: center; margin-top: 8px; }
   .modal-success {
     display: none;
@@ -1175,12 +1144,10 @@
 </head>
 <body>
 
-<!-- ══════════ HEADER ══════════ -->
 <header id="header">
   <div class="header-inner">
     <a href="#" class="logo">
-      <img src="images/logo.png" alt="White Lion Logo" class="logo-icon"
-           onerror="this.style.display='none'; this.nextElementSibling.style.paddingLeft='0';">
+      <img src="images/logo.png" alt="White Lion Logo" class="logo-icon">
       <div class="logo-text">
         White Lion
         <small>Barbershop</small>
@@ -1208,7 +1175,6 @@
   </div>
 </header>
 
-<!-- Mobile nav -->
 <div class="mobile-nav" id="mobileNav">
   <a href="#services" onclick="closeMenu()">Услуги</a>
   <a href="#masters" onclick="closeMenu()">Мастера</a>
@@ -1221,10 +1187,9 @@
   <button class="btn btn-gold" onclick="openModal(); closeMenu()">Записаться онлайн</button>
 </div>
 
-<!-- ══════════ HERO ══════════ -->
 <section id="hero">
   <div class="hero-bg">
-    <img src="images/hero.jpg" alt="White Lion Barbershop" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">
+    <img src="images/hero.jpg" alt="White Lion Barbershop" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
   </div>
   <div class="hero-content">
     <div class="hero-eyebrow">Ростов-на-Дону · Барбершоп</div>
@@ -1245,7 +1210,6 @@
   </div>
 </section>
 
-<!-- ══════════ STATS BAR ══════════ -->
 <div class="stats-bar">
   <div class="stats-inner">
     <div class="stat-item">
@@ -1270,14 +1234,12 @@
   </div>
 </div>
 
-<!-- ══════════ SERVICES ══════════ -->
 <section id="services">
   <div class="services-inner">
     <span class="section-label">Прайс-лист</span>
     <h2 class="section-title">Наши <span>Услуги</span></h2>
     <span class="gold-line"></span>
 
-    <!-- TIER SWITCHER -->
     <div class="tier-nav" id="tierNav" role="tablist" aria-label="Категории мастеров">
       <div class="tier-glider" id="tierGlider"></div>
       <button class="tier-btn active" role="tab" aria-selected="true" data-tier="vip" id="tierBtnVip">
@@ -1291,7 +1253,6 @@
       </button>
     </div>
 
-    <!-- VIP PANEL -->
     <div class="tier-panel active" data-tier="vip" id="panel-vip" role="tabpanel">
       <div class="tier-intro">
         <p class="tier-intro-desc">Приватное пространство для тех, кто ценит тишину и абсолютный комфорт во время процедуры.</p>
@@ -1306,7 +1267,7 @@
           </div>
           <i class="fa-solid fa-chevron-down group-chevron"></i>
         </div>
-        <div class="service-group-body" style="max-height: 500px;">
+        <div class="service-group-body">
           <div class="service-row">
             <div class="service-row-main">
               <span class="service-row-name">Бронь VIP комнаты</span>
@@ -1314,14 +1275,13 @@
             </div>
             <div class="service-row-right">
               <span class="service-row-price">500 ₽</span>
-              <button class="service-row-book" onclick="bookService('Бронь VIP комнаты')" aria-label="Записаться: Бронь VIP комнаты"><i class="fa-solid fa-arrow-right"></i></button>
+              <button class="service-row-book" onclick="bookService('Бронь VIP комнаты')" aria-label="Записаться"><i class="fa-solid fa-arrow-right"></i></button>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- MIDDLE PANEL -->
     <div class="tier-panel" data-tier="middle" id="panel-middle" role="tabpanel" hidden>
       <div class="tier-intro">
         <p class="tier-intro-desc">Уверенная классика: чёткие линии, аккуратная борода и уход, на который можно положиться каждый день.</p>
@@ -1336,30 +1296,30 @@
           </div>
           <i class="fa-solid fa-chevron-down group-chevron"></i>
         </div>
-        <div class="service-group-body" style="max-height: 500px;">
+        <div class="service-group-body">
           <div class="service-row">
             <div class="service-row-main"><span class="service-row-name">Мужская стрижка</span></div>
-            <div class="service-row-right"><span class="service-row-price">1 700 – 1 800 ₽</span><button class="service-row-book" onclick="bookService('Мужская стрижка')" aria-label="Записаться: Мужская стрижка"><i class="fa-solid fa-arrow-right"></i></button></div>
+            <div class="service-row-right"><span class="service-row-price">1 700 – 1 800 ₽</span><button class="service-row-book" onclick="bookService('Мужская стрижка')"><i class="fa-solid fa-arrow-right"></i></button></div>
           </div>
           <div class="service-row">
             <div class="service-row-main"><span class="service-row-name">Подростковая стрижка</span></div>
-            <div class="service-row-right"><span class="service-row-price">1 500 ₽</span><button class="service-row-book" onclick="bookService('Подростковая стрижка')" aria-label="Записаться: Подростковая стрижка"><i class="fa-solid fa-arrow-right"></i></button></div>
+            <div class="service-row-right"><span class="service-row-price">1 500 ₽</span><button class="service-row-book" onclick="bookService('Подростковая стрижка')"><i class="fa-solid fa-arrow-right"></i></button></div>
           </div>
           <div class="service-row">
             <div class="service-row-main"><span class="service-row-name">Детская стрижка</span></div>
-            <div class="service-row-right"><span class="service-row-price">1 300 ₽</span><button class="service-row-book" onclick="bookService('Детская стрижка')" aria-label="Записаться: Детская стрижка"><i class="fa-solid fa-arrow-right"></i></button></div>
+            <div class="service-row-right"><span class="service-row-price">1 300 ₽</span><button class="service-row-book" onclick="bookService('Детская стрижка')"><i class="fa-solid fa-arrow-right"></i></button></div>
           </div>
           <div class="service-row">
             <div class="service-row-main"><span class="service-row-name">Окантовка, мытьё, укладка</span></div>
-            <div class="service-row-right"><span class="service-row-price">800 – 1 000 ₽</span><button class="service-row-book" onclick="bookService('Окантовка, мытьё, укладка')" aria-label="Записаться: Окантовка, мытьё, укладка"><i class="fa-solid fa-arrow-right"></i></button></div>
+            <div class="service-row-right"><span class="service-row-price">800 – 1 000 ₽</span><button class="service-row-book" onclick="bookService('Окантовка, мытьё, укладка')"><i class="fa-solid fa-arrow-right"></i></button></div>
           </div>
           <div class="service-row">
             <div class="service-row-main"><span class="service-row-name">Стрижка машинкой</span></div>
-            <div class="service-row-right"><span class="service-row-price">800 – 1 000 ₽</span><button class="service-row-book" onclick="bookService('Стрижка машинкой')" aria-label="Записаться: Стрижка машинкой"><i class="fa-solid fa-arrow-right"></i></button></div>
+            <div class="service-row-right"><span class="service-row-price">800 – 1 000 ₽</span><button class="service-row-book" onclick="bookService('Стрижка машинкой')"><i class="fa-solid fa-arrow-right"></i></button></div>
           </div>
           <div class="service-row">
             <div class="service-row-main"><span class="service-row-name">Окантовка</span></div>
-            <div class="service-row-right"><span class="service-row-price">500 – 600 ₽</span><button class="service-row-book" onclick="bookService('Окантовка')" aria-label="Записаться: Окантовка"><i class="fa-solid fa-arrow-right"></i></button></div>
+            <div class="service-row-right"><span class="service-row-price">500 – 600 ₽</span><button class="service-row-book" onclick="bookService('Окантовка')"><i class="fa-solid fa-arrow-right"></i></button></div>
           </div>
         </div>
       </div>
@@ -1375,18 +1335,18 @@
         <div class="service-group-body">
           <div class="service-row">
             <div class="service-row-main"><span class="service-row-name">Оформление бороды</span></div>
-            <div class="service-row-right"><span class="service-row-price">1 100 – 1 200 ₽</span><button class="service-row-book" onclick="bookService('Оформление бороды')" aria-label="Записаться: Оформление бороды"><i class="fa-solid fa-arrow-right"></i></button></div>
+            <div class="service-row-right"><span class="service-row-price">1 100 – 1 200 ₽</span><button class="service-row-book" onclick="bookService('Оформление бороды')"><i class="fa-solid fa-arrow-right"></i></button></div>
           </div>
           <div class="service-row">
             <div class="service-row-main">
               <span class="service-row-name">Моделирование бороды</span>
               <span class="service-row-note">Распаривание, скраб</span>
             </div>
-            <div class="service-row-right"><span class="service-row-price">1 400 ₽</span><button class="service-row-book" onclick="bookService('Моделирование бороды')" aria-label="Записаться: Моделирование бороды"><i class="fa-solid fa-arrow-right"></i></button></div>
+            <div class="service-row-right"><span class="service-row-price">1 400 ₽</span><button class="service-row-book" onclick="bookService('Моделирование бороды')"><i class="fa-solid fa-arrow-right"></i></button></div>
           </div>
           <div class="service-row">
             <div class="service-row-main"><span class="service-row-name">Камуфляж бороды</span></div>
-            <div class="service-row-right"><span class="service-row-price">1 300 ₽</span><button class="service-row-book" onclick="bookService('Камуфляж бороды')" aria-label="Записаться: Камуфляж бороды"><i class="fa-solid fa-arrow-right"></i></button></div>
+            <div class="service-row-right"><span class="service-row-price">1 300 ₽</span><button class="service-row-book" onclick="bookService('Камуфляж бороды')"><i class="fa-solid fa-arrow-right"></i></button></div>
           </div>
         </div>
       </div>
@@ -1402,25 +1362,24 @@
         <div class="service-group-body">
           <div class="service-row">
             <div class="service-row-main"><span class="service-row-name">SPA-уход за лицом</span></div>
-            <div class="service-row-right"><span class="service-row-price">1 500 ₽</span><button class="service-row-book" onclick="bookService('SPA-уход за лицом')" aria-label="Записаться: SPA-уход за лицом"><i class="fa-solid fa-arrow-right"></i></button></div>
+            <div class="service-row-right"><span class="service-row-price">1 500 ₽</span><button class="service-row-book" onclick="bookService('SPA-уход за лицом')"><i class="fa-solid fa-arrow-right"></i></button></div>
           </div>
           <div class="service-row">
             <div class="service-row-main"><span class="service-row-name">Чёрная маска</span></div>
-            <div class="service-row-right"><span class="service-row-price">1 000 ₽</span><button class="service-row-book" onclick="bookService('Чёрная маска')" aria-label="Записаться: Чёрная маска"><i class="fa-solid fa-arrow-right"></i></button></div>
+            <div class="service-row-right"><span class="service-row-price">1 000 ₽</span><button class="service-row-book" onclick="bookService('Чёрная маска')"><i class="fa-solid fa-arrow-right"></i></button></div>
           </div>
           <div class="service-row">
             <div class="service-row-main"><span class="service-row-name">Удаление волос воском</span></div>
-            <div class="service-row-right"><span class="service-row-price">300 ₽</span><button class="service-row-book" onclick="bookService('Удаление волос воском')" aria-label="Записаться: Удаление волос воском"><i class="fa-solid fa-arrow-right"></i></button></div>
+            <div class="service-row-right"><span class="service-row-price">300 ₽</span><button class="service-row-book" onclick="bookService('Удаление волос воском')"><i class="fa-solid fa-arrow-right"></i></button></div>
           </div>
           <div class="service-row">
             <div class="service-row-main"><span class="service-row-name">Камуфляж головы</span></div>
-            <div class="service-row-right"><span class="service-row-price">1 500 ₽</span><button class="service-row-book" onclick="bookService('Камуфляж головы')" aria-label="Записаться: Камуфляж головы"><i class="fa-solid fa-arrow-right"></i></button></div>
+            <div class="service-row-right"><span class="service-row-price">1 500 ₽</span><button class="service-row-book" onclick="bookService('Камуфляж головы')"><i class="fa-solid fa-arrow-right"></i></button></div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- SENIOR PANEL -->
     <div class="tier-panel" data-tier="senior" id="panel-senior" role="tabpanel" hidden>
       <div class="tier-intro">
         <p class="tier-intro-desc">Высшая квалификация мастеров, расширенный уход и техники, недоступные в стандартном формате.</p>
@@ -1435,34 +1394,34 @@
           </div>
           <i class="fa-solid fa-chevron-down group-chevron"></i>
         </div>
-        <div class="service-group-body" style="max-height: 700px;">
+        <div class="service-group-body">
           <div class="service-row">
             <div class="service-row-main"><span class="service-row-name">Стрижка</span></div>
-            <div class="service-row-right"><span class="service-row-price">2 500 ₽</span><button class="service-row-book" onclick="bookService('Стрижка (Senior)')" aria-label="Записаться: Стрижка Senior"><i class="fa-solid fa-arrow-right"></i></button></div>
+            <div class="service-row-right"><span class="service-row-price">2 500 ₽</span><button class="service-row-book" onclick="bookService('Стрижка (Senior)')"><i class="fa-solid fa-arrow-right"></i></button></div>
           </div>
           <div class="service-row">
             <div class="service-row-main"><span class="service-row-name">Подростковая стрижка</span></div>
-            <div class="service-row-right"><span class="service-row-price">1 900 ₽</span><button class="service-row-book" onclick="bookService('Подростковая стрижка (Senior)')" aria-label="Записаться: Подростковая стрижка Senior"><i class="fa-solid fa-arrow-right"></i></button></div>
+            <div class="service-row-right"><span class="service-row-price">1 900 ₽</span><button class="service-row-book" onclick="bookService('Подростковая стрижка (Senior)')"><i class="fa-solid fa-arrow-right"></i></button></div>
           </div>
           <div class="service-row">
             <div class="service-row-main"><span class="service-row-name">Стрижка до 13 лет</span></div>
-            <div class="service-row-right"><span class="service-row-price">2 000 ₽</span><button class="service-row-book" onclick="bookService('Стрижка до 13 лет')" aria-label="Записаться: Стрижка до 13 лет"><i class="fa-solid fa-arrow-right"></i></button></div>
+            <div class="service-row-right"><span class="service-row-price">2 000 ₽</span><button class="service-row-book" onclick="bookService('Стрижка до 13 лет')"><i class="fa-solid fa-arrow-right"></i></button></div>
           </div>
           <div class="service-row">
             <div class="service-row-main"><span class="service-row-name">Детская стрижка до 10 лет</span></div>
-            <div class="service-row-right"><span class="service-row-price">1 600 ₽</span><button class="service-row-book" onclick="bookService('Детская стрижка до 10 лет')" aria-label="Записаться: Детская стрижка до 10 лет"><i class="fa-solid fa-arrow-right"></i></button></div>
+            <div class="service-row-right"><span class="service-row-price">1 600 ₽</span><button class="service-row-book" onclick="bookService('Детская стрижка до 10 лет')"><i class="fa-solid fa-arrow-right"></i></button></div>
           </div>
           <div class="service-row">
             <div class="service-row-main"><span class="service-row-name">Окантовка</span></div>
-            <div class="service-row-right"><span class="service-row-price">1 000 ₽</span><button class="service-row-book" onclick="bookService('Окантовка (Senior)')" aria-label="Записаться: Окантовка Senior"><i class="fa-solid fa-arrow-right"></i></button></div>
+            <div class="service-row-right"><span class="service-row-price">1 000 ₽</span><button class="service-row-book" onclick="bookService('Окантовка (Senior)')"><i class="fa-solid fa-arrow-right"></i></button></div>
           </div>
           <div class="service-row">
             <div class="service-row-main"><span class="service-row-name">Стрижка машинкой, 2 насадки</span></div>
-            <div class="service-row-right"><span class="service-row-price">1 800 ₽</span><button class="service-row-book" onclick="bookService('Стрижка машинкой, 2 насадки')" aria-label="Записаться: Стрижка машинкой 2 насадки"><i class="fa-solid fa-arrow-right"></i></button></div>
+            <div class="service-row-right"><span class="service-row-price">1 800 ₽</span><button class="service-row-book" onclick="bookService('Стрижка машинкой, 2 насадки')"><i class="fa-solid fa-arrow-right"></i></button></div>
           </div>
           <div class="service-row">
             <div class="service-row-main"><span class="service-row-name">Стрижка машинкой, 1 насадка</span></div>
-            <div class="service-row-right"><span class="service-row-price">1 200 ₽</span><button class="service-row-book" onclick="bookService('Стрижка машинкой, 1 насадка')" aria-label="Записаться: Стрижка машинкой 1 насадка"><i class="fa-solid fa-arrow-right"></i></button></div>
+            <div class="service-row-right"><span class="service-row-price">1 200 ₽</span><button class="service-row-book" onclick="bookService('Стрижка машинкой, 1 насадка')"><i class="fa-solid fa-arrow-right"></i></button></div>
           </div>
         </div>
       </div>
@@ -1478,33 +1437,33 @@
         <div class="service-group-body">
           <div class="service-row">
             <div class="service-row-main"><span class="service-row-name">Моделирование бороды</span></div>
-            <div class="service-row-right"><span class="service-row-price">1 700 ₽</span><button class="service-row-book" onclick="bookService('Моделирование бороды (Senior)')" aria-label="Записаться: Моделирование бороды Senior"><i class="fa-solid fa-arrow-right"></i></button></div>
+            <div class="service-row-right"><span class="service-row-price">1 700 ₽</span><button class="service-row-book" onclick="bookService('Моделирование бороды (Senior)')"><i class="fa-solid fa-arrow-right"></i></button></div>
           </div>
           <div class="service-row">
             <div class="service-row-main">
               <span class="service-row-name">Стрижка бороды</span>
               <span class="service-row-note">Без распаривания</span>
             </div>
-            <div class="service-row-right"><span class="service-row-price">1 500 ₽</span><button class="service-row-book" onclick="bookService('Стрижка бороды без распаривания')" aria-label="Записаться: Стрижка бороды без распаривания"><i class="fa-solid fa-arrow-right"></i></button></div>
+            <div class="service-row-right"><span class="service-row-price">1 500 ₽</span><button class="service-row-book" onclick="bookService('Стрижка бороды без распаривания')"><i class="fa-solid fa-arrow-right"></i></button></div>
           </div>
           <div class="service-row">
             <div class="service-row-main">
               <span class="service-row-name">Королевское бритьё</span>
               <span class="service-row-note">Горячее полотенце, мастика, бритва</span>
             </div>
-            <div class="service-row-right"><span class="service-row-price">1 600 ₽</span><button class="service-row-book" onclick="bookService('Королевское бритьё')" aria-label="Записаться: Королевское бритьё"><i class="fa-solid fa-arrow-right"></i></button></div>
+            <div class="service-row-right"><span class="service-row-price">1 600 ₽</span><button class="service-row-book" onclick="bookService('Королевское бритьё')"><i class="fa-solid fa-arrow-right"></i></button></div>
           </div>
           <div class="service-row">
             <div class="service-row-main"><span class="service-row-name">Бритьё головы шейвером</span></div>
-            <div class="service-row-right"><span class="service-row-price">1 500 ₽</span><button class="service-row-book" onclick="bookService('Бритьё головы шейвером')" aria-label="Записаться: Бритьё головы шейвером"><i class="fa-solid fa-arrow-right"></i></button></div>
+            <div class="service-row-right"><span class="service-row-price">1 500 ₽</span><button class="service-row-book" onclick="bookService('Бритьё головы шейвером')"><i class="fa-solid fa-arrow-right"></i></button></div>
           </div>
           <div class="service-row">
             <div class="service-row-main"><span class="service-row-name">Тонирование бороды</span></div>
-            <div class="service-row-right"><span class="service-row-price">1 400 ₽</span><button class="service-row-book" onclick="bookService('Тонирование бороды')" aria-label="Записаться: Тонирование бороды"><i class="fa-solid fa-arrow-right"></i></button></div>
+            <div class="service-row-right"><span class="service-row-price">1 400 ₽</span><button class="service-row-book" onclick="bookService('Тонирование бороды')"><i class="fa-solid fa-arrow-right"></i></button></div>
           </div>
           <div class="service-row">
             <div class="service-row-main"><span class="service-row-name">Удаление волос воском</span><span class="service-row-note">Одна зона</span></div>
-            <div class="service-row-right"><span class="service-row-price">400 – 500 ₽</span><button class="service-row-book" onclick="bookService('Удаление волос воском (Senior)')" aria-label="Записаться: Удаление волос воском Senior"><i class="fa-solid fa-arrow-right"></i></button></div>
+            <div class="service-row-right"><span class="service-row-price">400 – 500 ₽</span><button class="service-row-book" onclick="bookService('Удаление волос воском (Senior)')"><i class="fa-solid fa-arrow-right"></i></button></div>
           </div>
         </div>
       </div>
@@ -1520,23 +1479,23 @@
         <div class="service-group-body">
           <div class="service-row">
             <div class="service-row-main"><span class="service-row-name">Креативное окрашивание</span></div>
-            <div class="service-row-right"><span class="service-row-price">3 000 – 4 500 ₽</span><button class="service-row-book" onclick="bookService('Креативное окрашивание')" aria-label="Записаться: Креативное окрашивание"><i class="fa-solid fa-arrow-right"></i></button></div>
+            <div class="service-row-right"><span class="service-row-price">3 000 – 4 500 ₽</span><button class="service-row-book" onclick="bookService('Креативное окрашивание')"><i class="fa-solid fa-arrow-right"></i></button></div>
           </div>
           <div class="service-row">
             <div class="service-row-main"><span class="service-row-name">Химическая завивка волос</span></div>
-            <div class="service-row-right"><span class="service-row-price">от 4 000 ₽</span><button class="service-row-book" onclick="bookService('Химическая завивка волос')" aria-label="Записаться: Химическая завивка волос"><i class="fa-solid fa-arrow-right"></i></button></div>
+            <div class="service-row-right"><span class="service-row-price">от 4 000 ₽</span><button class="service-row-book" onclick="bookService('Химическая завивка волос')"><i class="fa-solid fa-arrow-right"></i></button></div>
           </div>
           <div class="service-row">
             <div class="service-row-main"><span class="service-row-name">Тонировка головы</span></div>
-            <div class="service-row-right"><span class="service-row-price">1 600 ₽</span><button class="service-row-book" onclick="bookService('Тонировка головы')" aria-label="Записаться: Тонировка головы"><i class="fa-solid fa-arrow-right"></i></button></div>
+            <div class="service-row-right"><span class="service-row-price">1 600 ₽</span><button class="service-row-book" onclick="bookService('Тонировка головы')"><i class="fa-solid fa-arrow-right"></i></button></div>
           </div>
           <div class="service-row">
             <div class="service-row-main"><span class="service-row-name">Чёрная маска</span></div>
-            <div class="service-row-right"><span class="service-row-price">1 200 ₽</span><button class="service-row-book" onclick="bookService('Чёрная маска (Senior)')" aria-label="Записаться: Чёрная маска Senior"><i class="fa-solid fa-arrow-right"></i></button></div>
+            <div class="service-row-right"><span class="service-row-price">1 200 ₽</span><button class="service-row-book" onclick="bookService('Чёрная маска (Senior)')"><i class="fa-solid fa-arrow-right"></i></button></div>
           </div>
           <div class="service-row">
             <div class="service-row-main"><span class="service-row-name">SPA-уход за лицом</span></div>
-            <div class="service-row-right"><span class="service-row-price">1 600 ₽</span><button class="service-row-book" onclick="bookService('SPA-уход за лицом (Senior)')" aria-label="Записаться: SPA-уход за лицом Senior"><i class="fa-solid fa-arrow-right"></i></button></div>
+            <div class="service-row-right"><span class="service-row-price">1 600 ₽</span><button class="service-row-book" onclick="bookService('SPA-уход за лицом (Senior)')"><i class="fa-solid fa-arrow-right"></i></button></div>
           </div>
         </div>
       </div>
@@ -1549,8 +1508,6 @@
   </div>
 </section>
 
-<!-- ══════════ MASTERS ══════════ -->
-<!-- ══════════ MASTERS ══════════ -->
 <section id="masters">
   <div class="masters-inner">
     <span class="section-label">Команда</span>
@@ -1558,41 +1515,35 @@
     <span class="gold-line"></span>
     <div class="masters-grid">
 
-      <!-- Мастер 1 -->
       <div class="master-card fade-up">
         <div class="master-photo">
           <img src="images/image5.png" alt="Виктория">
-        
-          <span class="master-badge">MIDLLE BARBER</span>
+          <span class="master-badge">MIDDLE BARBER</span>
         </div>
         <div class="master-info">
           <div class="master-name">Виктория</div>
-          <div class="master-role">MIDLLE BARBER</div>
+          <div class="master-role">MIDDLE BARBER</div>
           <div class="master-exp"><i class="fa-solid fa-star" style="color:var(--gold);font-size:0.7rem;"></i> Мужские стрижки и уход</div>
           <button class="btn btn-outline btn-sm" onclick="openModal()">К этому мастеру</button>
         </div>
       </div>
 
-      <!-- Мастер 2 -->
       <div class="master-card fade-up">
         <div class="master-photo">
           <img src="images/image2.png" alt="Есения">
-         
-          <span class="master-badge">MIDLLE BARBER</span>
+          <span class="master-badge">MIDDLE BARBER</span>
         </div>
         <div class="master-info">
           <div class="master-name">Есения</div>
-          <div class="master-role">MIDLLE BARBER</div>
+          <div class="master-role">MIDDLE BARBER</div>
           <div class="master-exp"><i class="fa-solid fa-star" style="color:var(--gold);font-size:0.7rem;"></i> Стрижки и моделирование</div>
           <button class="btn btn-outline btn-sm" onclick="openModal()">К этому мастеру</button>
         </div>
       </div>
 
-      <!-- Мастер 3 -->
       <div class="master-card fade-up">
         <div class="master-photo">
           <img src="images/image3.png" alt="Роман">
-         
           <span class="master-badge">Senior Barber</span>
         </div>
         <div class="master-info">
@@ -1603,11 +1554,9 @@
         </div>
       </div>
 
-      <!-- Мастер 4 -->
       <div class="master-card fade-up">
         <div class="master-photo">
           <img src="images/image4.png" alt="Гарик">
-         
           <span class="master-badge">Senior Barber</span>
         </div>
         <div class="master-info">
@@ -1618,11 +1567,9 @@
         </div>
       </div>
 
-      <!-- Мастер 5 -->
       <div class="master-card fade-up">
         <div class="master-photo">
           <img src="images/image6.png" alt="Ваган">
-         
           <span class="master-badge">Senior Barber</span>
         </div>
         <div class="master-info">
@@ -1637,7 +1584,6 @@
   </div>
 </section>
 
-<!-- ══════════ GALLERY ══════════ -->
 <section id="gallery">
   <div class="gallery-inner">
     <span class="section-label">Портфолио</span>
@@ -1646,22 +1592,18 @@
     <div class="gallery-grid">
       <div class="gallery-item fade-up">
         <img src="images/work1.jpg" alt="Работа 1">
-       
         <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
       </div>
       <div class="gallery-item fade-up">
         <img src="images/work2.jpg" alt="Работа 2">
-        
         <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
       </div>
       <div class="gallery-item fade-up">
         <img src="images/work3.jpg" alt="Работа 3">
-       
         <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
       </div>
       <div class="gallery-item fade-up">
         <img src="images/work4.jpg" alt="Работа 4">
-        
         <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
       </div>
       <div class="gallery-item fade-up">
@@ -1670,14 +1612,12 @@
       </div>
       <div class="gallery-item fade-up">
         <img src="images/work6.jpg" alt="Работа 6">
-   
         <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══════════ FEATURES STRIP ══════════ -->
 <div class="features-strip">
   <div class="features-strip-inner">
     <div class="feature-item"><i class="fa-solid fa-credit-card"></i> Оплата картой и наличными</div>
@@ -1689,7 +1629,6 @@
   </div>
 </div>
 
-<!-- ══════════ REVIEWS ══════════ -->
 <section id="reviews">
   <div class="reviews-inner">
     <span class="section-label">Яндекс.Карты</span>
@@ -1710,7 +1649,6 @@
     </div>
 
     <div class="reviews-grid">
-
       <div class="review-card fade-up">
         <div class="review-stars">★★★★★</div>
         <p class="review-text">«Лучший барбершоп! Со мной работал мастер по имени Гор — в жизни не встречал мастера, который так профессионально подходит к своей работе. Идеальная стрижка, чёткое оформление бороды и приятная беседа. Абсолютный идеал.»</p>
@@ -1755,7 +1693,6 @@
           </div>
         </div>
       </div>
-
     </div>
 
     <div style="text-align:center; margin-top:40px;">
@@ -1766,7 +1703,6 @@
   </div>
 </section>
 
-<!-- ══════════ CONTACTS / FOOTER ══════════ -->
 <section id="contacts">
   <div class="contacts-inner">
     <div>
@@ -1817,14 +1753,13 @@
     </div>
 
     <div>
-      <div style="position:relative;overflow:hidden;border-radius:12px;height:350px;border:1px solid var(--border);">
+      <div class="map-container">
         <iframe
           src="https://yandex.ru/map-widget/v1/?ll=39.733737%2C47.226848&z=16"
           width="100%"
-          height="350"
-          frameborder="1"
-          allowfullscreen="true"
-          style="position:relative; display:block;">
+          height="100%"
+          frameborder="0"
+          allowfullscreen="true">
         </iframe>
       </div>
       <div style="margin-top:12px;text-align:center;">
@@ -1842,7 +1777,6 @@
   </div>
 </section>
 
-<!-- ══════════ MODAL ══════════ -->
 <div class="modal-overlay" id="modalOverlay" onclick="handleOverlayClick(event)">
   <div class="modal">
     <button class="modal-close" onclick="closeModal()" aria-label="Закрыть">
@@ -1865,12 +1799,6 @@
         <label>Услуга</label>
         <select id="fService">
           <option value="">— Выберите услугу —</option>
-          <option>Мужская стрижка</option>
-          <option>Моделирование бороды</option>
-          <option>Детская стрижка</option>
-          <option>Стрижка машинкой</option>
-          <option>Комплекс «Стрижка + Борода»</option>
-          <option>Горячее бритьё</option>
         </select>
       </div>
       <div class="form-group">
@@ -1898,7 +1826,6 @@
   </div>
 </div>
 
-<!-- ══════════ JS ══════════ -->
 <script>
   // ── MOBILE NAV ──
   const navToggle = document.getElementById('navToggle');
@@ -1933,6 +1860,112 @@
     document.getElementById('modalSuccess').style.display = 'block';
     setTimeout(closeModal, 3500);
   }
+
+  // ── УМНАЯ ЗАПИСЬ НА УСЛУГУ ──
+  function bookService(serviceName) {
+    openModal();
+    const select = document.getElementById('fService');
+    let found = false;
+    
+    // Ищем услугу в списке
+    for(let i = 0; i < select.options.length; i++) {
+      if(select.options[i].text === serviceName) {
+        select.selectedIndex = i;
+        found = true;
+        break;
+      }
+    }
+    
+    // Если услуги еще нет в списке (так как их 40+), добавляем её
+    if(!found) {
+      const newOption = new Option(serviceName, serviceName);
+      select.add(newOption);
+      select.value = serviceName;
+    }
+  }
+
+  // ── ПЕРЕКЛЮЧЕНИЕ ВКЛАДОК (VIP, Middle, Senior) ──
+  const tierBtns = document.querySelectorAll('.tier-btn');
+  const tierPanels = document.querySelectorAll('.tier-panel');
+  const tierGlider = document.getElementById('tierGlider');
+
+  function updateGlider(activeBtn) {
+    if(!activeBtn) return;
+    tierGlider.style.width = activeBtn.offsetWidth + 'px';
+    tierGlider.style.transform = `translateX(${activeBtn.offsetLeft - 6}px)`;
+  }
+
+  tierBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // 1. Убираем активность со всех кнопок
+      tierBtns.forEach(b => b.classList.remove('active'));
+      
+      // 2. Скрываем все панели
+      tierPanels.forEach(p => {
+        p.classList.remove('active');
+        p.hidden = true;
+      });
+
+      // 3. Активируем нужную панель
+      btn.classList.add('active');
+      const targetTier = btn.getAttribute('data-tier');
+      const targetPanel = document.getElementById(`panel-${targetTier}`);
+      targetPanel.hidden = false;
+      
+      // Небольшая задержка для плавного появления (CSS animation)
+      setTimeout(() => {
+        targetPanel.classList.add('active');
+        recalcAccordions(targetPanel);
+      }, 10);
+
+      // Двигаем золотой ползунок
+      updateGlider(btn);
+    });
+  });
+
+  // ── РАСКРЫВАЮЩИЕСЯ СПИСКИ (Аккордеон) ──
+  const groupHeads = document.querySelectorAll('.service-group-head');
+  
+  function recalcAccordions(container) {
+    container.querySelectorAll('.service-group.open .service-group-body').forEach(body => {
+      body.style.maxHeight = body.scrollHeight + 'px';
+    });
+  }
+
+  groupHeads.forEach(head => {
+    head.addEventListener('click', () => {
+      const group = head.parentElement;
+      const body = group.querySelector('.service-group-body');
+      const isOpen = group.classList.contains('open');
+
+      if (isOpen) {
+        // Закрываем
+        body.style.maxHeight = body.scrollHeight + 'px'; // фиксируем высоту перед анимацией
+        setTimeout(() => { body.style.maxHeight = '0'; }, 10);
+        group.classList.remove('open');
+      } else {
+        // Открываем
+        group.classList.add('open');
+        body.style.maxHeight = body.scrollHeight + 'px';
+        
+        // После завершения анимации снимаем жесткий лимит, чтобы список не обрезался
+        setTimeout(() => {
+          if(group.classList.contains('open')) body.style.maxHeight = 'none';
+        }, 450);
+      }
+    });
+  });
+
+  // ── ИНИЦИАЛИЗАЦИЯ ПРИ ЗАГРУЗКЕ ──
+  window.addEventListener('load', () => {
+    const activeBtn = document.querySelector('.tier-btn.active');
+    updateGlider(activeBtn);
+    recalcAccordions(document);
+  });
+  window.addEventListener('resize', () => {
+    const activeBtn = document.querySelector('.tier-btn.active');
+    updateGlider(activeBtn);
+  });
 
   // ── HEADER SHADOW ON SCROLL ──
   window.addEventListener('scroll', () => {
