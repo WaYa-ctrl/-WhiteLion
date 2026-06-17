@@ -1785,10 +1785,7 @@
 
   // ── MODAL ──
   function openModal() {
-    document.getElementById('modalOverlay').classList.add('open');
-    document.getElementById('modalForm').style.display = '';
-    document.getElementById('modalSuccess').style.display = 'none';
-    document.body.style.overflow = 'hidden';
+    window.open('https://yandex.ru/maps/org/white_lion/8882750793/?booking%5Bpage%5D=menu&booking%5Bpermalink%5D=8882750793&l=trf%2Ctrfe&ll=39.737011%2C47.228682&utm_source=share&z=15', '_blank');
   }
   function closeModal() {
     document.getElementById('modalOverlay').classList.remove('open');
@@ -1810,26 +1807,9 @@
   }
 
   // ── УМНАЯ ЗАПИСЬ НА УСЛУГУ ──
+
   function bookService(serviceName) {
     openModal();
-    const select = document.getElementById('fService');
-    let found = false;
-    
-    // Ищем услугу в списке
-    for(let i = 0; i < select.options.length; i++) {
-      if(select.options[i].text === serviceName) {
-        select.selectedIndex = i;
-        found = true;
-        break;
-      }
-    }
-    
-    // Если услуги еще нет в списке (так как их 40+), добавляем её
-    if(!found) {
-      const newOption = new Option(serviceName, serviceName);
-      select.add(newOption);
-      select.value = serviceName;
-    }
   }
 
   // ── ПЕРЕКЛЮЧЕНИЕ ВКЛАДОК (VIP, Middle, Senior) ──
